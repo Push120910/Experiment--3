@@ -1,4 +1,4 @@
-## Aim: To design and analyze the MOS differential amplifier circuit for the specifications provoided.
+## Aim: To design and analyze the MOS differential amplifier circuit for the specifications provided.
 ## Design Question:
 Design Differential Amplifier for the following specifications **V<sub>dd</sub> = 2.5V**, **P <= 3mW**,**V<sub>ocm</sub> = 1.4V**, **V<sub>p</sub> = 0.5V**,**V<sub>icm</sub> = 1.3V**.\
 Perform the DC analysis, Transient Analysuis and AC Analysis and extract\
@@ -57,6 +57,47 @@ hence  2^1/2* V<sub>ov</sub> < V<sub>idmax</sub> <*2^1/2* V<sub>ov</sub>
 ## Calculations:
 ![WhatsApp Image 2025-03-02 at 16 00 53_0574411c](https://github.com/user-attachments/assets/9f7fc084-941e-48c0-b250-eacc82e20e01)
 ![WhatsApp Image 2025-03-02 at 16 00 53_b4abf5ad](https://github.com/user-attachments/assets/deafb9fa-7867-4cf4-8cca-c2c4a9daf0ba)
+**A<sub>v</sub> =g<sub>m</sub>*R<sub>d</sub>**\
+=2*I<sub>d</sub>/V<sub>ov</sub>= 2*0.6*10^-3/(0.8-0.366)*1.8339*10^3\
+= 5.07=20log(5.07)= 14.11dB
+## Observations:
+## Circuit 1:
+### Circuit Diagram :
+![WhatsApp Image 2025-03-02 at 20 35 29_891bee8f](https://github.com/user-attachments/assets/58a5abfe-0fc3-4ec4-8f2b-9c2b9b65ba9e)
+### DC Analysis:
+![{5D3CE92C-F171-4FF1-BCAE-7EF3B10D8D5F}](https://github.com/user-attachments/assets/5f4b8816-58d1-4a74-b41b-7fa8db234db7)
+length =180nm, width=7.65um \
+The width is varied and the length is fixed to get the desired vout = 1.4 V.This ensures the mosfet operates in saturation and steady state operation.
+If the other parameters are kept constant and the input biased voltage is slightly varied by +/-0.15V, i.e 1.45 or to 1.25 V ,the corresponding vriation in Vout and I<sub>d</sub> can be seen as follows.\
+![{64B6AA68-18CC-4ECD-B708-3EEF2D158389}](https://github.com/user-attachments/assets/45f8b8ad-dc35-4f22-a06f-3dc4255022bc)
+**Fig : V<sub>incm</sub>  1.45V ,  V<sub>ocm</sub>=1.18V, I<sub>d</sub>=0.71mA ,I<sub>rss</sub>=1.43mA**\
+When the voltage is increased, the effective output commom voltage decreases whereas the current through each of the mosfet increases which is justified by the dependency of current on V<sub>gs</sub> value according to the square law relationship.
+![{2E5FED8C-EB9C-42F4-BED5-4A2FFB80C2A1}](https://github.com/user-attachments/assets/c49b0a04-35df-44cb-80f3-e1b4370bef3e)
+**Fig: V<sub>incm</sub>  1.25V ,  V<sub>ocm</sub>=1.47V, I<sub>d</sub>=0.56mA ,I<sub>rss</sub>=1.1mA**\
+As the value of inputcommon mode voltage is decreased the effective output voltage increases an the corresponding value of current through each mosfet is decreased which again is justified by te square law relationship and V<sub>o1</sub> = V<sub>dd</sub>-Id*Rd , as the current decreases , v<sub>o</sub> increases which can be obseved during the simulation.
+### AC Analysis :
+![image](https://github.com/user-attachments/assets/6ab00382-f951-4130-af34-95a40b113fd1)
+Gain of the circuit = 13.8dB which is very close to that of theoritical value of 14.01 dB and the corresponding bandwidth is 134.27 MHz .There is significant increase in the gain as comparedto that of normal CS amplifier circuit and increase in the range of linear operation of the circuit.
+### Transient analysis:
+![image](https://github.com/user-attachments/assets/2d94b071-e34d-4331-8534-2da9c63bd3e6)
+There is 180 degree phase shift between input and output with amplified otput by a factor of Vout/Vin=1.625/1.35=1.20.
+i.e The output is 1.20 times amplified than input.\
+## Circuit 2 :
+When the resistor is replaced by a constant current source.\
+### Circuit Diagram:
+![{75CA2FBC-03E4-4064-9579-BD87C8501563}](https://github.com/user-attachments/assets/74dc62af-c0cd-4718-baef-275240171830)
+### DC Analysis:
+![{CDDE4870-D8EF-424E-BD9A-56E8617576CD}](https://github.com/user-attachments/assets/3762c684-1bd6-42d5-b639-f7f657390fd8)
+There is no much variation in the operating point and stability is maintained.All the other parameters are kept constant and the current flowing is equally distributed between each of the mosfets,i.e 0.6mA and Vout=1.399V.
+### AC Analysis:
+![image](https://github.com/user-attachments/assets/a18f7a73-324f-45c8-b285-fa51ca38cb9c)
+The gain remains constant as there is no variatin in gm as well as Rd but there is increase in the bandwidth to 505.9 MHz which is significantly large as compared to the previous circuit.
+### Transient Analysis:
+![image](https://github.com/user-attachments/assets/013dd688-5134-409b-8240-60fb10b85588)
+There is 180 degree phase shift betweeen input and output and the differential input signal is amplified by a factor of 1.624/1.347= 1.205 and the response ,i.e time varied response is observed.
+
+
+
 
 
 
