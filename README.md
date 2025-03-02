@@ -25,6 +25,13 @@ In an ideal case the amplifier will be able To reject the common mode signals wh
 This is a common mode signal analysis.
 ## Differential mode analysis:
 Any diifferential signal which is applied in suvh a way that V<sub>in1</sub>>V<sub>in2</sub> which causes the the corresponding current I<sub>d1</sub>>I<sub>d2</sub>.
-WKT ** V<sub>dd</sub> = I<sub>d</sub>*R<sub>d</sub>+V<sub>ds</sub>** that implies V<sub>ds</sub> decreases , on the other hand since I<sub>d2</sub> decreases , V<sub>ds</sub> increases and the circuit is self adjusting to changes in differential mode to maintainthe eqilibrium state.\
-**A<sub>vdm</sub>=(g<sub>m</sub> R<sub>d</sub>**. The differential signals add up and get amplified in the circuit which in turn is the output of the differential pair circuit.\
+WKT ** V<sub>dd</sub> = I<sub>d</sub>*R<sub>d</sub>+V<sub>ds</sub>** that implies V<sub>ds</sub> decreases , on the other hand since I<sub>d2</sub> decreases , V<sub>ds</sub> increases and the circuit is self adjusting to changes in differential mode to maintainthe eqilibrium state.\ This happens when the difference is too small and the potential V<su>p</sub> is maintained.
+But when the difference betwen V<sub>in1</sub> >>> V<sub>in2</sub>, then the entire currrent I<sub>ss</sub> flows throw the mosfet 1 and the mosfet 2 is off.
+If this happens the other way round mosfet 2 is turned on whereas the mosfet1 is turned off.
+![WhatsApp Image 2025-03-02 at 14 44 45_34a7f73f](https://github.com/user-attachments/assets/c1100cd6-8e0f-4c2d-8ff3-4e4a895b6873)
+ The differential signals add up and get amplified in the circuit which in turn is the output of the differential pair circuit.
+ ## small signal model:
+![WhatsApp Image 2025-03-02 at 14 42 11_794c5c52](https://github.com/user-attachments/assets/e3da0887-8d28-4eb5-a04d-8aa6f7bea272)
+The small signal model verifies that the tail node **P** remains constant in the presence of small diffential inputs and the corresponding small signal gain is given by
+**A<sub>v</sub> = g<sub>m</sub> * R<sub>d</sub>** which is also the magnitude of differential mode gain.
 
