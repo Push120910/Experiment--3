@@ -18,7 +18,8 @@ MOS differential pair circuits are better than BJT based circuits due to the fac
 
 A common mode input signal is applied to both the mosfets i.e Vin1=Vin2\
 **Vin1-Vin2=0(common mode signal in ideal case =0)**\
-Both the mosfets **M1=M2** (symmetrical) in nature and also Rd1=Rd.\ Both the mosfets need to be in saturation and the current I<sub>ss</sub> will be equally divided to both the mosfets and hence **I<sub>d1</sub> = I<sub>d2</sub>**.\
+Both the mosfets **M1=M2** (symmetrical) in nature and also Rd1=Rd.\
+Both the mosfets need to be in saturation and the current I<sub>ss</sub> will be equally divided to both the mosfets and hence **I<sub>d1</sub> = I<sub>d2</sub>**.\
 **V<sub>gs1</sub> + V<sub>p</sub> < V<sub>icm</sub> < V<sub>dd</sub> - R<sub>d</sub> * I<sub>d</sub> + V<sub>th</sub>**\
 In an ideal case the amplifier will be able To reject the common mode signals which are basically the noise signals and the dc signals which are coming from the supply without using a capacitor and hence decreasing the area and eliminating noise as well as dc in the amplified output. And hence the common mode signals gets subtracted.\
 **A<sub>v</sub>=(V<sub>o1</sub>-V<sub>o2</sub>)/V<sub>icm</sub>**.Ideal case the common mode gain = 0.\But in practical there is a slight input commmon mode signal and hence is not 0.
@@ -28,7 +29,7 @@ Any diifferential signal which is applied in suvh a way that V<sub>in1</sub>>V<s
 WKT ** V<sub>dd</sub> = I<sub>d</sub>*R<sub>d</sub>+V<sub>ds</sub>** that implies V<sub>ds</sub> decreases , on the other hand since I<sub>d2</sub> decreases , V<sub>ds</sub> increases and the circuit is self adjusting to changes in differential mode to maintainthe eqilibrium state.\ This happens when the difference is too small and the potential V<su>p</sub> is maintained.
 But when the difference betwen V<sub>in1</sub> >>> V<sub>in2</sub>, then the entire currrent I<sub>ss</sub> flows throw the mosfet 1 and the mosfet 2 is off.
 If this happens the other way round mosfet 2 is turned on whereas the mosfet1 is turned off.
-V<sub>o1</sub>=V<sub>dd</sub>-I<sub>d</sub>*R<sub>d</sub>\
+V<sub>o1</sub>=V<sub>dd</sub>-I<sub>d</sub>*R<sub>d</sub>.\
 Any change in the differential input , the circuit becomes self adjusting and the difference between the magnitude of change is inputs is directly propotional to -2*I<sub>d</sub>*r<sub>d</sub>.
 
 ![WhatsApp Image 2025-03-02 at 14 44 45_34a7f73f](https://github.com/user-attachments/assets/c1100cd6-8e0f-4c2d-8ff3-4e4a895b6873)
