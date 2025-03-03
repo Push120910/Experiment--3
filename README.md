@@ -32,6 +32,7 @@ If this happens the other way round mosfet 2 is turned on whereas the mosfet1 is
  The differential signals add up and get amplified in the circuit which in turn is the output of the differential pair circuit.
  ### Small Signal Model:
 ![WhatsApp Image 2025-03-02 at 14 42 11_794c5c52](https://github.com/user-attachments/assets/e3da0887-8d28-4eb5-a04d-8aa6f7bea272)
+
 The small signal model verifies that the tail node **P** remains constant in the presence of small diffential inputs and the corresponding small signal gain is given by
 **A<sub>v</sub> = g<sub>m</sub> * R<sub>d</sub>** which is also the magnitude of differential mode gain.
 ### Large Signal Analysis:
@@ -65,36 +66,66 @@ hence  2^1/2* V<sub>ov</sub> < V<sub>idmax</sub> <*2^1/2* V<sub>ov</sub>
 ### Circuit Diagram :
 ![WhatsApp Image 2025-03-02 at 20 35 29_891bee8f](https://github.com/user-attachments/assets/58a5abfe-0fc3-4ec4-8f2b-9c2b9b65ba9e)
 ### DC Analysis:
-![{5D3CE92C-F171-4FF1-BCAE-7EF3B10D8D5F}](https://github.com/user-attachments/assets/5f4b8816-58d1-4a74-b41b-7fa8db234db7)
-length =180nm, width=7.65um \
+![{3521BFA4-290A-4460-8EC7-1BAE2D6701F4}](https://github.com/user-attachments/assets/bc5f1f1b-ec37-43d6-86e0-f8d527060831)
+length =180nm, width=7.63158um \
 The width is varied and the length is fixed to get the desired vout = 1.4 V.This ensures the mosfet operates in saturation and steady state operation.
-If the other parameters are kept constant and the input biased voltage is slightly varied by +/-0.15V, i.e 1.45 or to 1.25 V ,the corresponding vriation in Vout and I<sub>d</sub> can be seen as follows.\
-![{64B6AA68-18CC-4ECD-B708-3EEF2D158389}](https://github.com/user-attachments/assets/45f8b8ad-dc35-4f22-a06f-3dc4255022bc)
+If the other parameters are kept constant and the input biased voltage is slightly varied by +/-0.15V, i.e 1.45 or to 1.15 V ,the corresponding vriation in Vout and I<sub>d</sub> can be seen as follows.\
+![{5232B6DB-3CF8-4BFD-A235-F8A44E380491}](https://github.com/user-attachments/assets/921729a1-de07-44b8-beac-c1fd35f16bf1)
+
 **Fig : V<sub>incm</sub>  1.45V ,  V<sub>ocm</sub>=1.18V, I<sub>d</sub>=0.71mA ,I<sub>rss</sub>=1.43mA**\
 When the voltage is increased, the effective output commom voltage decreases whereas the current through each of the mosfet increases which is justified by the dependency of current on V<sub>gs</sub> value according to the square law relationship.
-![{2E5FED8C-EB9C-42F4-BED5-4A2FFB80C2A1}](https://github.com/user-attachments/assets/c49b0a04-35df-44cb-80f3-e1b4370bef3e)
-**Fig: V<sub>incm</sub>  1.25V ,  V<sub>ocm</sub>=1.47V, I<sub>d</sub>=0.56mA ,I<sub>rss</sub>=1.1mA**\
-As the value of inputcommon mode voltage is decreased the effective output voltage increases an the corresponding value of current through each mosfet is decreased which again is justified by te square law relationship and V<sub>o1</sub> = V<sub>dd</sub>-Id*Rd , as the current decreases , v<sub>o</sub> increases which can be obseved during the simulation.
+![{0859F29F-1F01-4E01-98C6-70E0AF40CA54}](https://github.com/user-attachments/assets/63349204-1c97-4a49-b46f-13c18417d47b)
+
+**Fig: V<sub>incm</sub>  1.15V ,  V<sub>ocm</sub>=1.618V, I<sub>d</sub>=0.48mA ,I<sub>rss</sub>=0.916mA**\
+As the value of input common mode voltage is decreased the effective output voltage increases an the corresponding value of current through each mosfet is decreased which again is justified by te square law relationship and V<sub>o1</sub> = V<sub>dd</sub>-Id*Rd , as the current decreases , v<sub>o</sub> increases which can be obseved during the simulation.
 ### AC Analysis :
 ![image](https://github.com/user-attachments/assets/6ab00382-f951-4130-af34-95a40b113fd1)
-Gain of the circuit = 13.8dB which is very close to that of theoritical value of 14.01 dB and the corresponding bandwidth is 134.27 MHz .There is significant increase in the gain as comparedto that of normal CS amplifier circuit and increase in the range of linear operation of the circuit.
+Gain of the circuit = 13.8dB which is very close to that of theoritical value of 14.01 dB and the corresponding bandwidth is 134.27 MHz .There is significant increase in the gain as comparedto that of normal CS amplifier circuit and increase in the range of linear operation of the circuit.\
+3dB bandwidth = 12.65GHz
 ### Transient analysis:
 ![image](https://github.com/user-attachments/assets/2d94b071-e34d-4331-8534-2da9c63bd3e6)
 There is 180 degree phase shift between input and output with amplified otput by a factor of Vout/Vin=1.625/1.35=1.20.
-i.e The output is 1.20 times amplified than input.\
+i.e The output is 1.20 times amplified than input.
 ## Circuit 2 :
-When the resistor is replaced by a constant current source.\
+When the resistor is replaced by a constant current source.
 ### Circuit Diagram:
 ![{75CA2FBC-03E4-4064-9579-BD87C8501563}](https://github.com/user-attachments/assets/74dc62af-c0cd-4718-baef-275240171830)
 ### DC Analysis:
-![{CDDE4870-D8EF-424E-BD9A-56E8617576CD}](https://github.com/user-attachments/assets/3762c684-1bd6-42d5-b639-f7f657390fd8)
-There is no much variation in the operating point and stability is maintained.All the other parameters are kept constant and the current flowing is equally distributed between each of the mosfets,i.e 0.6mA and Vout=1.399V.
+![{2726FA90-2501-4D5A-8276-5DCFE082E9C1}](https://github.com/user-attachments/assets/a51ec885-57cd-4161-a3cb-744d31810fe1)
+
+There is no much variation in the operating point and stability is maintained.All the other parameters are kept constant and the current flowing is equally distributed between each of the mosfets,i.e 0.6mA and Vout=1.39997V.
 ### AC Analysis:
 ![image](https://github.com/user-attachments/assets/a18f7a73-324f-45c8-b285-fa51ca38cb9c)
-The gain remains constant as there is no variatin in gm as well as Rd but there is increase in the bandwidth to 505.9 MHz which is significantly large as compared to the previous circuit.
+The gain remains constant as there is no variation in gm as well as Rd but there is increase in the bandwidth to 505.9 MHz which is significantly large as compared to the previous circuit.
 ### Transient Analysis:
 ![image](https://github.com/user-attachments/assets/013dd688-5134-409b-8240-60fb10b85588)
 There is 180 degree phase shift betweeen input and output and the differential input signal is amplified by a factor of 1.624/1.347= 1.205 and the response ,i.e time varied response is observed.
+## Circuit 3:
+When the constant current source is replaced by a mosfet operating in saturation which acts as a constant current source with sufficient biased voltage V<sub>b</sub> and a length is fixed to 180nm with the width varied to get the required output signal (in Volts).\
+**The current in the saturation region is non linear and hence to make it linear we need to ensure the mosfet operation in the range of differential input V<sub>idmax</sub> - V<sub>idmin</sub> = 2^1/2 *V<sub>ov</sub>-(-**2^1/2*V<sub>ov</sub>)**
+The biased voltage V<sub>b</sub>is supplied as per the calculations as previously made.
+### Circuit Diagram 3:
+![{AF28DBD4-7C26-4907-9A06-B9A3082EBC79}](https://github.com/user-attachments/assets/22337be1-d16b-495a-a22c-e1d63c1c754a)
+### DC Analysis:
+The Width of **17.0078um** produces the desired output as per the question and the DC operating point is set.It also produces a constant current of 1.19999mA .\
+![{883EE929-B684-4613-80AA-A496122109A4}](https://github.com/user-attachments/assets/05fa57dc-ced3-4a14-ad7c-d28a5fd8674e)
+
+If the Vb value is acccurately supplied as per the calculation to 0.866662, the width needs to decreased to **12.0536u** to set the reuired DC operating point.
+![{EE6CD1EB-2272-40AE-95AA-C63038DB1B61}](https://github.com/user-attachments/assets/cef22c78-8dbd-4d39-ae39-189bc4e05aaa)
+### AC Analysis:
+The gain doesnt see a significant change and it remains quite similar to the previously observed Frequency responses.But there is further increase in the bandwidth to around 704.88 MHz.
+The 3 dB bandwidth turns out to be **17.866GHz**.
+
+![image](https://github.com/user-attachments/assets/0f719125-4a7c-412c-8e40-028b6357fa7f)
+### Transient Analysis:
+![image](https://github.com/user-attachments/assets/51db7ac9-64d2-4174-873c-e210a136a1a3)
+
+There is 180degree phase shift between input and output the the Vout is amplified 1.2 times that of Vin.\
+## Circuit 4:
+The resistors i.e Rd1=Rd2 which is replacd by diode connected Pmos circuits which act as resistors offering higher output impedace and considerably higher gain which can be visulaised in AC analysis.
+### Circuit Diagram 4:
+![{D2B63E6D-0CC1-4B87-A1F3-2479833A8698}](https://github.com/user-attachments/assets/336c7db6-3543-484a-8fd8-d75fbd4695cb)
+### DC Analysis:
 
 
 
