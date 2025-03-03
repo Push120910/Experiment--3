@@ -28,6 +28,9 @@ Any diifferential signal which is applied in suvh a way that V<sub>in1</sub>>V<s
 WKT ** V<sub>dd</sub> = I<sub>d</sub>*R<sub>d</sub>+V<sub>ds</sub>** that implies V<sub>ds</sub> decreases , on the other hand since I<sub>d2</sub> decreases , V<sub>ds</sub> increases and the circuit is self adjusting to changes in differential mode to maintainthe eqilibrium state.\ This happens when the difference is too small and the potential V<su>p</sub> is maintained.
 But when the difference betwen V<sub>in1</sub> >>> V<sub>in2</sub>, then the entire currrent I<sub>ss</sub> flows throw the mosfet 1 and the mosfet 2 is off.
 If this happens the other way round mosfet 2 is turned on whereas the mosfet1 is turned off.
+V<sub>o1</sub>=V<sub>dd</sub>-I<sub>d</sub>*R<sub>d</sub>\
+Any change in the differential input , the circuit becomes self adjusting and the difference between the magnitude of change is inputs is directly propotional to -2*I<sub>d</sub>*r<sub>d</sub>.
+
 ![WhatsApp Image 2025-03-02 at 14 44 45_34a7f73f](https://github.com/user-attachments/assets/c1100cd6-8e0f-4c2d-8ff3-4e4a895b6873)
  The differential signals add up and get amplified in the circuit which in turn is the output of the differential pair circuit.
  ### Small Signal Model:
@@ -41,7 +44,7 @@ Also **I<sub>d</sub> = 1/2 k<sub>n</sub> (V<sub>ov</sub>)^2**\
 V<sub>idmax</sub>=V<sub>gs1</sub>+ V<sub>p</sub>\
 =V<sub>th</sub>+2^1/2V<sub>ov</sub>-V<sub>th</sub>\
 = **2^1/2 V<sub>ov</sub>**\
-hence  2^1/2* V<sub>ov</sub> < V<sub>idmax</sub> <*2^1/2* V<sub>ov</sub>
+hence  2^1/2* V<sub>ov</sub> < V<sub>idmax</sub> < -2^1/2* V<sub>ov</sub>
 ![WhatsApp Image 2025-03-02 at 14 44 46_b8d80860](https://github.com/user-attachments/assets/b508694a-33a8-44df-ba78-546373e0d9c2)
 ## Procedure :
  1. Create a new Experiment file.
@@ -87,13 +90,13 @@ Gain of the circuit = 13.8dB which is very close to that of theoritical value of
 There is 180 degree phase shift between input and output with amplified otput by a factor of Vout/Vin=1.625/1.35=1.20.
 i.e The output is 1.20 times amplified than input.
 ## Circuit 2 :
-When the resistor is replaced by a constant current source.
+When the resistor is replaced by a constant current source.**(Tail Current source)**. A constant current source offers infinite impedance.
 ### Circuit Diagram:
-![{75CA2FBC-03E4-4064-9579-BD87C8501563}](https://github.com/user-attachments/assets/74dc62af-c0cd-4718-baef-275240171830)
+![{CBA8730A-0390-4358-B650-5AC4D9F3BBDC}](https://github.com/user-attachments/assets/08722fb7-feb9-4feb-8f12-5c3ecf3d5b91)
 ### DC Analysis:
-![{2726FA90-2501-4D5A-8276-5DCFE082E9C1}](https://github.com/user-attachments/assets/a51ec885-57cd-4161-a3cb-744d31810fe1)
+![{0C687E10-0D37-4D44-8380-6DD207633C16}](https://github.com/user-attachments/assets/66e83e37-b708-4398-9ecf-415ac859df5a)
 
-There is no much variation in the operating point and stability is maintained.All the other parameters are kept constant and the current flowing is equally distributed between each of the mosfets,i.e 0.6mA and Vout=1.39997V.
+There is no much variation in the operating point and stability is maintained.All the other parameters are kept constant and the current flowing is equally distributed between each of the mosfets,i.e 0.6mA and Vout=1.4V.The width is not varied but the resistor Rd1=Rd2 is varied to 1.83339k to get the output voltage.
 ### AC Analysis:
 ![image](https://github.com/user-attachments/assets/a18f7a73-324f-45c8-b285-fa51ca38cb9c)
 The gain remains constant as there is no variation in gm as well as Rd but there is increase in the bandwidth to 505.9 MHz which is significantly large as compared to the previous circuit.
@@ -122,10 +125,55 @@ The 3 dB bandwidth turns out to be **17.866GHz**.
 
 There is 180degree phase shift between input and output the the Vout is amplified 1.2 times that of Vin.\
 ## Circuit 4:
-The resistors i.e Rd1=Rd2 which is replacd by diode connected Pmos circuits which act as resistors offering higher output impedace and considerably higher gain which can be visulaised in AC analysis.
+The resistors i.e Rd1=Rd2 which is replacd by diode connected pmos circuits which act as resistors offering higher output impedance and considerably higher gain which can be visulaised in AC analysis.
 ### Circuit Diagram 4:
 ![{D2B63E6D-0CC1-4B87-A1F3-2479833A8698}](https://github.com/user-attachments/assets/336c7db6-3543-484a-8fd8-d75fbd4695cb)
 ### DC Analysis:
+![{51D90C40-3F0C-4650-8EDD-CD9CFD217B5D}](https://github.com/user-attachments/assets/88e1f690-c731-45d1-a77e-3bd50bdc16ed)
+
+The width of nmos constant is slightly varied to 12.09999um to set the desired operating point which couldnt be set accurately to 1.4V (Vout) but very very close value of 1.40016V due to high precision required in the width modulation.
+### AC Analysis:
+![image](https://github.com/user-attachments/assets/e57fec8e-31e5-47d2-a9c1-b3ac20e31c80)
+
+There is significant increase in both gain and the bandwidth operation and the gain is 5dB and the 3dB bandwidth is 22.366GHz which is significantly large compared to the previous circuit operation due to the fact that as the no of mosfets increases , it give rise to higher gain.
+### Transient Analysis:
+![image](https://github.com/user-attachments/assets/9205574a-2d22-4708-b479-85e2138699c0)
+There is 180 degree phase shift between input and output but the amplication factor of the output wrt input is quite lower and has reduced to **1.1** times that of the input signal(1.5/1.35) .
+## Result:
+**Comparision between the 4 circuits**
+ | Parameter| Circuit1|Circuit 2|Circuit 3|Circuit 4|
+ | ---------| --------|---------|---------|---------|
+ |Vout|1.4 V|1.4V|1.4V|1.4V|1.40016V|
+ |Id1=Id2=Iss/2|0.593|0.6m|0.59m|0.58m|
+ |Iss(in A)|1.9996m|1.2m|1.1996m|1.16m|
+ |Amplification factor|1.20|1.205|1.20|1.1|
+ 3 dB Bandwidth|12.654 GHz|13.57GHz|17.866GHz|22.366GHz|
+ Vp(in Volts)|0.49918|0.5088|0.499182|0.5054|
+ ## Conclusion:
+ **1. When the tail resistor is replaced by a constant current source:**
+   In the original differential amplifier,  helps set the tail current, but it varies with supply voltage or transistor mismatches.\
+   Replacing it with an ideal constant current source ensures a fixed tail current, making the circuit more stable and improving common-mode rejection.\
+**2.When constant current is replaced by NMOS transistor:**
+   Using an NMOS transistor as an active current source **(current mirror)** further improves stability.\
+   The NMOS transistor operates in saturation, acting as a high-impedance current source.\
+   This increases the gain and improves the circuit's performance in terms of common-mode rejection ratio (CMRR).\
+**3.When Rd resistors are replaced by diode connected PMOS Transistors:**
+   In a conventional differential amplifier,  converts the differential current into voltage gain. \
+   A diode-connected PMOS (gate shorted to drain) functions as an active load, increasing output impedance and enhancing voltage gain.\
+   This configuration is known as a differential amplifier with active loads, leading to improved gain, better linearity, and higher bandwidth.
+ ## Inference:
+ 1. As the no of mosfets increases the gain also increases along with the output impedance but the compromise is made on  Power Dissipation, Area, and the output swing.
+ 2. By replacing a resistor with a constant currrent source there is no much variation in the amplified signal as well as the gain but there is **increase in bandwidth**. In circuit no 2 the variation is done 
+  with the Rd resistors to get the desired operating point and the width of both the mosfets is kept constant i.e 7.6318u .
+ 3. When the current source is replaced by a mosfet operating in the saturation region and supplied with the biased volatage Vb, the current is **non linear** in nature nad hence to operate in the linear region 
+ it should be operated in the range of V<sub>idmax</sub>-V<sub>idmin</sub>.
+ 4. There is significant increase in bandwidth in the circuit 4 when all the components are replaced by mosfets (either nmos or the pmos which inturn is diode connected).
+ 5. The differential pair now functions as a fully active differential amplifier with:
+ **.** High gain (due to active load).\
+ **.** Improved common-mode rejection (due to current mirror).\
+ **.** Better stability and efficiency (due to active current source replacing ).
+  
+
 
 
 
